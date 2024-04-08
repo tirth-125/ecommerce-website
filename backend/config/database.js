@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-// dotenv.config({ path: "backend / config / config.env" });
+// dotenv.config({path:"backend/config/config.env"});
 
 const connectDb = ()=>{
-    mongoose.connect(process.env.CONN_STR, { useNewUrlParser: true }).then(() => {
+    mongoose.connect(process.env.CONN_STR, { useNewUrlParser: true }).then((connect) => {
+        console.log(connect);
         console.log("Database Connected Successfully");
     }).catch((err) => {
         console.log("Something went wrong", err);

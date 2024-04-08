@@ -12,10 +12,10 @@ process.on('uncaughtException',(err)=>{
 });
 dotenv.config({path:"backend/config/config.env"});
 
+// console.log(process.env.CONN_STR);
 connectDb();
-
-const server = app.listen(process.env.PORT,()=>{
-    console.log(`Sever is listen on http://localhost:${process.env.PORT}`);
+app.listen(process.env.PORT,()=>{
+    console.log(`Server is listen on http://localhost:${process.env.PORT}`);
 });
 
 // console.log(youtube); this is uncaughtException  
